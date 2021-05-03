@@ -1,0 +1,79 @@
+<div class="row">
+        <!--REPORTE 1-->
+        <button class="btn btn-primary" type="button" toggle="collapse" 
+        data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+        Lista de paises
+        </button>
+        
+            <table class="table table-striped" style="align-self: flex-start">
+                <thead class="thead-dark">
+                    <TR>
+                        <Th scope="col">ID</Th>
+                        <Th scope="col">PAIS</Th>
+                        <Th scope="col">POBLACION</Th>
+                        <Th scope="col">AREA</Th>
+                        <Th scope="col">CAPITAL</Th>
+                        <Th scope="col">REGION</Th>
+                        <Th scope="col">ELIMINAR</Th>
+                        <Th scope="col" class="text-center" >EDITAR</Th>
+                        
+                    </TR>
+                </thead>
+                <tbody>
+                    <tr  *ngFor="let dato of paises">
+                        <th scope="row">{{dato.id}}</th>
+                        <td>
+                            <input type="text" id="nombre{{dato.id}}" value={{dato.nombre}} placeholder="Nombre Pais"  disabled="true">
+                        </td>
+                        <td>
+                            <input type="text" id="poblacion{{dato.id}}" value={{dato.poblacion}} placeholder="poblacion" disabled="true">
+                        </td>
+                        <td>
+                            <input type="text" id="area{{dato.id}}" value={{dato.area}} placeholder="area" disabled="true">
+                        </td>
+                        <td>
+                            <input type="text" id="capital{{dato.id}}" value={{dato.capital}} placeholder="capital" disabled="true">
+                        </td>
+                        <td>
+                            <input type="hidden" id="hdn{{dato.id}}" value={{dato.id_region}}>
+                            <input type="text" id="txtRegion{{dato.id}}" value={{dato.region}} disabled="true">
+                                <select class="form-control" name="idPaisRegion" style="width:150px;visibility:hidden " id="slcRegion{{dato.id}}" disabled="true">
+                                    <option *ngFor="let reg of regiones" value={{reg.id}} >{{reg.nombre}} </option>
+                                </select>
+                        
+                            <!--{{dato.id_region}}-->
+
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" (click)="deletePais(dato.id)"> 
+                                <i class="far fa-trash-alt"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-warning" id="btnE{{dato.id}}"  (click)="editarPais(dato.id)"> 
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-success" id="btnU{{dato.id}}" disabled="true" (click)="updatePais(dato.id)"> 
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-danger" id="btnC{{dato.id}}" disabled="true" (click)="cancelarEdicionPais(dato.id)">
+                                        C
+                                    </button>
+                                </td>
+                            </tr>
+                                
+                              
+                            
+                            
+                        </td>
+                    </tr>
+                </tbody>
+                
+            </table>
+</div>

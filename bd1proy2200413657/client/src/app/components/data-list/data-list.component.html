@@ -1,0 +1,462 @@
+
+
+<div class="container">
+    
+</div>
+<div class="row justify-content-center">
+    <!--REPORTE 1-->
+    <button class="btn btn-primary" type="button" toggle="collapse" 
+    data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+        1. Desplegar cada profesional<br>
+         , y el número de inventos que tiene asignados <br>
+ordenados de mayor a menor.
+    </button>
+    
+        <table class="table table-striped" >
+            <thead class="thead-dark">
+                <TR>
+                    <Th scope="col">ID</Th>
+                    <Th scope="col">NOMBRE PROFESIONAL</Th>
+                    <Th scope="col">CANTIDAD INVENTOS</Th>
+                </TR>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let dato of datos">
+                    <th scope="row">{{dato.ID}}</th>
+                    <td>{{dato.PROFESIONAL}}</td>
+                    <td>{{dato.CANTIDAD_INVENTOS}}</td>
+                </tr>
+            </tbody>
+            
+        </table>
+    
+    <!--REPORTE 2-->
+    <button class="btn btn-primary" type="button" toggle="collapse" 
+    data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+    2. Desplegar los países de cada continente <br>
+    y el número de preguntas que han contestado <br>
+    de cualquier encuesta.Si hay países que no <br>
+    han contestado ninguna encuesta <br>
+    , igual debe aparecer su nombre el la lista
+    </button>
+        <table class="table table-striped" >
+            <thead class="thead-dark">
+                <TR>
+                    <Th scope="col">CONTINENTE</Th>
+                    <Th scope="col">SUBCONTINENTE</Th>
+                    <Th scope="col">PAIS</Th>
+                    <Th scope="col">CANTIDAD PREGUNTAS CONTESTADAS</Th>
+                    
+                </TR>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let dato of datos2">
+                    <th scope="row">{{dato.CONTINENTE}}</th>
+                    <td>{{dato.SUBCONTINENTE}}</td>
+                    <td>{{dato.PAIS}}</td>
+                    <td>{{dato.CANTIDAD_RESPUESTAS}}</td>
+                    
+                </tr>
+            </tbody>
+            
+        </table>
+    <!--REPORTE 3-->
+    <button class="btn btn-primary" type="button" toggle="collapse" 
+    data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+    3.Desplegar todos los países que no tengan ningún inventor 
+    y que no tengan ninguna frontera con otro país ordenados por su área.
+    </button>
+    
+        <table class="table table-striped" >
+            <thead class="thead-dark">
+                <TR>
+                    <Th scope="col">PAIS</Th>
+                    <Th scope="col">AREA</Th>
+                </TR>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let dato of datos3">
+                    <th scope="row">{{dato.PAIS}}</th>
+                    <td>{{dato.AREA}}</td>
+                </tr>
+            </tbody>
+            
+        </table>
+
+        <!--REPORTE 4-->
+        <button class="btn btn-primary" type="button" toggle="collapse" 
+        data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+        4. Desplegar el nombre de cada jefe seguido de todos sus subalternos
+, para todos los profesionales ordenados por el jefe alfabéticamente.
+        </button>
+        
+        
+        <table class="table table-striped" >
+            <thead class="thead-dark">
+                <TR>
+                    <Th scope="col">JEFE</Th>
+                    <Th scope="col">SUBJEFE</Th>
+                    <Th scope="col">AREA</Th>
+                                    
+                </TR>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let dato of datos4">
+                    <th scope="row">{{dato.jefe}}</th>
+                    <td>{{dato.subjefe}}</td>
+                    <td>{{dato.area}}</td>
+                    
+                    
+                </tr>
+            </tbody>
+            
+        </table>
+
+    <!--REPORTE 5-->    
+    <button class="btn btn-primary" type="button" toggle="collapse" 
+    data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+    5. Desplegar todos los profesionales
+    , y su salario cuyo salario es mayor al promedio 
+    del salario de los profesionales en su misma área
+    </button> 
+        <table class="table table-striped" >
+            <thead class="thead-dark">
+                <TR>
+                    <Th scope="col">JEFE</Th>
+                    <Th scope="col">SUBJEFE</Th>
+                    <Th scope="col">AREA</Th>
+                    <Th scope="col">SALARIO PROMEDIO</Th>                
+                </TR>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let dato of datos5">
+                    <th scope="row">{{dato.profesional}}</th>
+                    <td>{{dato.salario}}</td>
+                    <td>{{dato.area}}</td>
+                    <td>{{dato.salario_promedio}}</td>
+                </tr>
+            </tbody>
+            
+        </table>
+    <!--REPORTE 6-->     
+    <button class="btn btn-primary" type="button" toggle="collapse" 
+    data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+    6. Desplegar los nombres de los países que han contestado encuestas
+    , ordenados del país que más aciertos ha
+     tenido hasta el que menos aciertos ha tenido.
+    </button> 
+    <table class="table table-striped" >
+        <thead class="thead-dark">
+            <TR>
+                <Th scope="col">PAIS</Th>
+                <Th scope="col">CANTIDAD DE ACIERTOS</Th>
+                
+            </TR>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let dato of datos6">
+                <td>{{dato.pais}}</td>
+                <td>{{dato.cantidad_aciertos}}</td>
+                
+            </tr>
+        </tbody>
+        
+    </table>
+
+    <!--REPORTE 7-->     
+    <button class="btn btn-primary" type="button" toggle="collapse" 
+    data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+    7.Desplegar los inventos documentados por todos los profesionales expertos en Óptica.
+    </button> 
+    <table class="table table-striped" >
+        <thead class="thead-dark">
+            <TR>
+                <Th scope="col">AREA</Th>
+                <Th scope="col">INVENTO</Th>
+                
+            </TR>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let dato of datos7">
+                <td>{{dato.area}}</td>
+                <td>{{dato.nombre}}</td>
+                
+                
+            </tr>
+        </tbody>
+        
+    </table>
+
+    <!--REPORTE 8-->     
+    <button class="btn btn-primary" type="button" toggle="collapse" 
+    data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+    8.Desplegar la suma del área de todos los países agrupados por la inicial de su nombre.
+    </button> 
+    <table class="table table-striped" >
+        <thead class="thead-dark">
+            <TR>
+                <Th scope="col">INICIAL</Th>
+                <Th scope="col">SUMA DE AREA</Th>
+                
+            </TR>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let dato of datos8">
+                <td>{{dato.inicial}}</td>
+                <td>{{dato.suma_area}}</td>
+                
+                
+            </tr>
+        </tbody>
+        
+    </table>
+    <!--REPORTE 9-->  
+    <button class="btn btn-primary" type="button" toggle="collapse" 
+    data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+    9. Desplegar todos los inventores y sus inventos cuyo nombre del inventor inicie con las letras BE.
+    </button>    
+    <table class="table table-striped" >
+        <thead class="thead-dark">
+            <TR>
+                <Th scope="col">INVENTO</Th>
+            </TR>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let dato of datos9">
+                <td>{{dato.invento}}</td>
+            </tr>
+        </tbody>
+        
+    </table>
+
+    <!--REPORTE 10--> 
+    <button class="btn btn-primary" type="button" toggle="collapse" 
+    data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+    10. Desplegar el nombre de todos los inventores que Inicien con B 
+    y terminen con r o con n que tengan inventos del siglo 19
+    </button>        
+    <table class="table table-striped" >
+        <thead class="thead-dark">
+            <TR>
+                <Th scope="col">INVENTO</Th>
+            </TR>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let dato of datos10">
+                <td>{{dato.invento}}</td>
+            </tr>
+        </tbody>
+        
+    </table>
+
+    <!--REPORTE 11--> 
+    <button class="btn btn-primary" type="button" toggle="collapse" 
+    data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+    11.Desplegar el nombre del país
+    y el área de todos los países que tienen mas de siete fronteras
+    ordenarlos por el de mayor área
+    </button>            
+    <table class="table table-striped" >
+        <thead class="thead-dark">
+            <TR>
+                <Th scope="col">PAIS</Th>
+                <Th scope="col">AREA</Th>
+                <Th scope="col">CANTIDAD_FRONTERAS</Th>
+            </TR>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let dato of datos11">
+                <td>{{dato.pais}}</td>
+                <td>{{dato.area}}</td>
+                <td>{{dato.cantidad_fronteras}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <!--REPORTE 12-->  
+    <button class="btn btn-primary" type="button" toggle="collapse" 
+    data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+    12. Desplegar todos los inventos de cuatro letras que inicien con L
+    </button>               
+    <table class="table table-striped" >
+        <thead class="thead-dark">
+            <TR>
+                <Th scope="col">INVENTO</Th>
+
+            </TR>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let dato of datos12">
+                <td>{{dato.invento}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--REPORTE 13--> 
+    <button class="btn btn-primary" type="button" toggle="collapse" 
+    data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+    13. Desplegar el nombre del profesional , su salario, su comisión <br >
+ y el total de salario (sueldo mas comisión) de todos los profesionales <br >
+  con comisión mayor que el 25% de su salario.
+    </button>     
+    <table class="table table-striped" >
+        <thead class="thead-dark">
+            <TR>
+                <Th scope="col">PROFESIONAL</Th>
+                <Th scope="col">CANTIDAD_INVENTOS</Th>
+
+            </TR>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let dato of datos13">
+                <td>{{dato.profesional}}</td>
+                <td>{{dato.cantidad_inventos}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!--REPORTE 14--> 
+    <button class="btn btn-primary" type="button" toggle="collapse" 
+    data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+    14. Desplegar cada encuesta y el número de países que las han contestado, ordenadas de mayor a menor.
+    </button>         
+    <table class="table table-striped" >
+        <thead class="thead-dark">
+            <TR>
+                <Th scope="col">ENCUESTA</Th>
+                <Th scope="col">CANTIDAD_PAISES</Th>
+
+            </TR>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let dato of datos14">
+                <td>{{dato.encuesta}}</td>
+                <td>{{dato.cantidad_paises}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <!--REPORTE 15-->  
+        <button class="btn btn-primary" type="button" toggle="collapse" 
+    data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+    15. Desplegar los países cuya población sea mayor a la población de los países centroamericanos juntos.
+    </button>            
+        <table class="table table-striped" >
+            <thead class="thead-dark">
+                <TR>
+                    <Th scope="col">PAIS</Th>
+                </TR>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let dato of datos15">
+                    <td>{{dato.pais}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!--REPORTE 16-->     
+        <button class="btn btn-primary" type="button" toggle="collapse" 
+        data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+        16. Desplegar todos los Jefes de cada profesional 
+        que no este en el mismo departamento 
+        que el del profesional que atiende al inventor Pasteur.
+        </button>           
+        <table class="table table-striped" >
+            <thead class="thead-dark">
+                <TR>
+                    <Th scope="col">JEFE</Th>
+                </TR>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let dato of datos16">
+                    <td>{{dato.jefe}}</td>
+                   
+                </tr>
+            </tbody>
+        </table>
+  <!--REPORTE 17--> 
+  <button class="btn btn-primary" type="button" toggle="collapse" 
+  data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+  17. Desplegar el nombre de todos los inventos inventados el mismo año que BENZ invento algún invento.
+  </button>        
+  <table class="table table-striped" >
+        <thead class="thead-dark">
+            <TR>
+                <Th scope="col">INVENTO</Th>
+                <Th scope="col">AÑO</Th>
+            </TR>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let dato of datos17">
+                <td>{{dato.invento}}</td>
+                <td>{{dato.anio}}</td>
+            </tr>
+        </tbody>
+    </table>
+<!--REPORTE 18-->  
+<button class="btn btn-primary" type="button" toggle="collapse" 
+  data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+  18. Desplegar los nombres 
+  y el número de habitantes de todas<br>
+  las islas que tiene un área mayor
+  o igual al área de Japón
+  </button>           
+  <table class="table table-striped" >
+        <thead class="thead-dark">
+            <TR>
+                <Th scope="col">PAIS</Th>
+                <Th scope="col">AREA</Th>
+            </TR>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let dato of datos18">
+                <td>{{dato.pais}}</td>
+                <td>{{dato.area}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <!--REPORTE 19-->     
+    <button class="btn btn-primary" type="button" toggle="collapse" 
+  data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+  19. Desplegar todos los países con el nombre de cada país con el cual tiene una frontera.
+  </button>       
+    <table class="table table-striped" >
+        <thead class="thead-dark">
+            <TR>
+                <Th scope="col">PAIS</Th>
+                <Th scope="col">FRONTERA</Th>
+            </TR>
+        </thead>
+        <tbody>
+            <tr  *ngFor="let dato of datos19">
+                <td>{{dato.pais}}</td>
+                <td>{{dato.frontera}}</td>
+            </tr>
+        </tbody>
+    </table>
+        <!--REPORTE 20--> 
+        <button class="btn btn-primary" type="button" toggle="collapse" 
+  data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+  20. Desplegar el nombre del profesional su salario 
+ y su comisión de los empleados cuyo salario <br>
+ es mayor que el doble de su comisión.
+  </button>       
+        <table class="table table-striped" >
+            <thead class="thead-dark">
+                <TR>
+                    <Th scope="col">PROFESIONAL</Th>
+                    <Th scope="col">SALARIO</Th>
+                    <Th scope="col">COMISION</Th>
+                </TR>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let dato of datos20">
+                    <td>{{dato.profesional}}</td>
+                    <td>{{dato.salario}}</td>
+                    <td>{{dato.comision}}</td>
+                </tr>
+            </tbody>
+        </table>
+</div>
+

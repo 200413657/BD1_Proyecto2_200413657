@@ -1,0 +1,68 @@
+<div class="row">
+    <!--REPORTE 1-->
+    <button class="btn btn-primary" type="button" toggle="collapse" 
+    data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+    Lista de paises
+    </button>
+    
+        <table class="table table-striped" style="align-self: flex-start">
+            <thead class="thead-dark">
+                <TR>
+                    
+                    <Th scope="col">ENCUESTA</Th>
+                    <Th scope="col">PREGUNTA</Th>
+                    <Th scope="col">ELIMINAR</Th>
+                    <Th scope="col" class="text-center" >EDITAR</Th>
+                    
+                </TR>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let dato of preguntas">
+                    
+                    <td>
+                        <input type="hidden" id="hdn{{dato.id}}" value={{dato.id_encuesta}}>
+                        <input type="text" id="txtEncuesta{{dato.id}}" value={{dato.encuesta}} disabled="true">
+                            <select class="form-control" name="idPreguntaEncuesta" style="width:150px;visibility:hidden " id="slcEncuesta{{dato.id}}" disabled="true">
+                                <option *ngFor="let reg of encuestas" value={{reg.id}} >{{reg.nombre}} </option>
+                            </select>
+                    
+                        <!--{{dato.id_region}}-->
+
+                    </td>
+                    <td>
+                        
+                        <textarea id="txtPregunta{{dato.id}}" style="width:300px" disabled="true" >{{dato.PREGUNTA}}</textarea>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="deletePregunta(dato.id)"> 
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <tr>
+                            <td>
+                                <button class="btn btn-warning" id="btnE{{dato.id}}"  (click)="editPregunta(dato.id)"> 
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn btn-success" id="btnU{{dato.id}}" disabled="true" (click)="updatePregunta(dato.id)"> 
+                                    <i class="fas fa-check"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" id="btnC{{dato.id}}" disabled="true" (click)="cancelEditPregunta(dato.id)">
+                                    C
+                                </button>
+                            </td>
+                        </tr>
+                            
+                          
+                        
+                        
+                    </td>
+                </tr>
+            </tbody>
+            
+        </table>
+</div>

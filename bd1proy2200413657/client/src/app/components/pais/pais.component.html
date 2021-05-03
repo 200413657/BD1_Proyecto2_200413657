@@ -1,0 +1,48 @@
+<table class="table table-striped" style="align-self: flex-start">
+    <thead class="thead-dark">
+        <TR>
+            <Th scope="col">PAIS</Th>
+            <Th scope="col">POBLACION</Th>
+            <Th scope="col">AREA</Th>
+            <Th scope="col">CAPITAL</Th>
+            <Th scope="col">REGION</Th>
+            <Th scope="col"></Th>
+            
+            
+        </TR>
+    </thead>
+    <tbody>
+        <tr>
+           
+            <td>
+                <input type="text" name="pais" [(ngModel)]="pais.nombre" placeholder="Pais" class="form-control" autofocus>
+               
+            </td>
+            <td>
+                <input type="text" name="poblacion" [(ngModel)]="pais.poblacion" placeholder="Poblacion" class="form-control" >
+               
+            </td>
+            <td>
+                <input type="text" name="area" [(ngModel)]="pais.area" placeholder="Area" class="form-control" >
+               
+            </td>
+            <td>
+                <input type="text" name="capital" [(ngModel)]="pais.capital" placeholder="Capital" class="form-control" >
+               
+            </td>
+            <td>
+                <select class="form-control" name="idPaisRegion" placeHolder="idPaisRegion" id="idRegion">
+                    <option *ngFor="let reg of regiones" [value]=reg.id>{{reg.nombre}}</option>
+                </select>
+
+            </td>
+          
+            <td>
+                <button name="save" class="btn btn-success btn-block" (click)="saveNewPais()">
+                    <i class="fas fa-check"></i>Grabar</button>
+            </td>
+        </tr>
+    </tbody>
+    
+</table>
+<app-pais-list></app-pais-list>

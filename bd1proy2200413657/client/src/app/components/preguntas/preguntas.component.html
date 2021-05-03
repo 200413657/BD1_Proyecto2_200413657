@@ -1,0 +1,35 @@
+<table class="table table-striped" style="align-self: flex-start">
+    <thead class="thead-dark">
+        <TR>
+            <Th scope="col">ENCUESTA</Th>
+            <Th scope="col" colspan="2">PREGUNTA</Th>
+            
+            
+        </TR>
+    </thead>
+    <tbody>
+        <tr>
+           
+            <td>
+                <select class="form-control" name="idPaisRegion" placeHolder="ENCUESTA" id="idRegion">
+                    
+                    <option *ngFor="let en of encuestas" [value]=en.id>{{en.nombre}}</option>
+                </select>
+
+            </td>
+
+            <td>
+                <input type="text" name="pais" [(ngModel)]="pregunta.PREGUNTA" placeholder="PREGUNTA" class="form-control" autofocus>
+               
+            </td>
+            
+          
+            <td>
+                <button name="save" class="btn btn-success btn-block" (click)="saveNewPais()">
+                    <i class="fas fa-check"></i>Grabar</button>
+            </td>
+        </tr>
+    </tbody>
+    
+</table>
+<app-select-form></app-select-form>
